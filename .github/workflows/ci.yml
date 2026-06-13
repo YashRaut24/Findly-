@@ -1,0 +1,29 @@
+name: Findly CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check imports work
+        run: python -c "from groq import Groq; from dotenv import load_dotenv; print('All imports successful')"
+
+      - name: Verify Dockerfile exists
+        run: test -f Dockerfile && echo "Dockerfile found"
