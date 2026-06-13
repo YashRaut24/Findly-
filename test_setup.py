@@ -8,6 +8,7 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 user_input = input("Ask something: ")     
 
+# Model response
 message = client.chat.completions.create(
     model="llama-3.1-8b-instant",
     messages=[
