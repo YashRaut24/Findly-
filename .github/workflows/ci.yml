@@ -19,6 +19,9 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Print Python version
+        run: python --version
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 
@@ -27,3 +30,4 @@ jobs:
 
       - name: Verify Dockerfile exists
         run: test -f Dockerfile && echo "Dockerfile found"
+
