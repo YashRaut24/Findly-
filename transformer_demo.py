@@ -45,12 +45,20 @@ print("=== Context Window Demo ===\n")
 messages = [
     {"role": "user", "content": "My name is Yash."},
     {"role": "assistant", "content": "Nice to meet you, Yash!"},
-    {"role": "user", "content": "What is my name?"}
+    
+    {"role": "user", "content": "My favourite programming language is Python."},
+    {"role": "assistant", "content": "Python is a great choice!"},
+    
+    {"role": "user", "content": "I am currently learning Machine Learning."},
+    {"role": "assistant", "content": "That sounds exciting!"},
+    
+    {"role": "user", "content": "Can you summarize everything you know about me from this conversation?"}
 ]
 
 response = client.chat.completions.create(
     model="llama-3.1-8b-instant",
     messages=messages,
-    max_tokens=50
+    max_tokens=100
 )
-print(f"Model remembers: {response.choices[0].message.content}")
+
+print(f"Model summary: {response.choices[0].message.content}")
