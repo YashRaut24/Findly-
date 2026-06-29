@@ -1,0 +1,25 @@
+Python is a high-level programming language known for simplicity and readability.
+Python uses garbage collection to automatically manage memory.
+Reference cycles in Python can cause memory leaks if not handled properly.
+The gc module provides tools to detect and fix circular references in Python.
+Memory profilers like tracemalloc help identify memory usage in Python programs.
+
+LangChain is a framework for building LLM-powered applications quickly.
+LangChain provides components for document loading, splitting, and retrieval.
+LCEL is LangChain Expression Language that chains components with the pipe operator.
+LangChain supports multiple vector databases including Chroma, Pinecone, and Weaviate.
+
+Vector databases store embeddings for efficient similarity search at scale.
+Chroma is an open-source vector database ideal for local development.
+HNSW indexing allows vector databases to search millions of vectors in milliseconds.
+Pinecone is a managed cloud vector database used in production AI systems.
+
+RAG stands for Retrieval Augmented Generation.
+RAG combines vector search with LLM generation for accurate, grounded answers.
+Advanced RAG includes query rewriting, reranking, and source citation.
+Naive RAG simply retrieves documents and passes them to the LLM without optimization.
+
+Transformers are neural network architectures that power modern LLMs.
+The attention mechanism allows transformers to focus on relevant parts of input.
+GPT, Claude, and Llama are all decoder-only transformer models.
+Temperature controls the randomness of LLM outputs during generation.
