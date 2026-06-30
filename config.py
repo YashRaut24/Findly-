@@ -12,3 +12,11 @@ TOP_K_RESULTS = 5 # retrieve 5 most relevant document chunks from vector db
 CHUNK_SIZE = 300 # split documents into 300 characters/tokens
 CHUNK_OVERLAP = 30 # each chunk overlaps the previous one by 30 chunks as it helps in understanding the context of a line
 
+DEMO_CLEARED_FLAG = "./demo_cleared.flag"
+
+def is_demo_cleared() -> bool:
+    return os.path.exists(DEMO_CLEARED_FLAG)
+
+def mark_demo_cleared():
+    with open(DEMO_CLEARED_FLAG, "w") as f:
+        f.write("true")
