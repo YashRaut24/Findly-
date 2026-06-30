@@ -34,3 +34,28 @@ class Retriever: # it , we will use to store and retrieve relevant documents
         )
 
         return results["documents"][0] # Since >0 document isnt accpeteable it will only return document at 0th index
+    
+    def clear_demo_data(self):
+        """Wipe the entire collection — used only on first real user upload."""
+        self.client.delete_collection(COLLECTION_NAME)
+        self.collection = self.client.get_or_create_collection(
+            name=COLLECTION_NAME,
+            metadata={"hnsw:space": "cosine"}
+        )
+        print("Cleared demo data — collection is now empty")
+
+    def add_user_documents(self, documents: list[str], is_first_upload: bool):
+        """Add user-uploaded chunks. Wipes demo data only on the very first upload."""
+        if is_first_upload:
+            self.clear_demo_data()
+
+        existing_count = self.collection.count()
+        embeddings = self.embedder.embed_batch(documents)
+
+        self.collection.add(
+            ids=[f"user_doc_{existing_count + i}" for i in range(len(documents))],
+            embeddings=embeddings,
+            documents=documents
+        )
+        print(f"Added {len(documents)} user documents. Total now: {self.collection.count()}")
+    
