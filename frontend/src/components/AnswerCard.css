@@ -1,0 +1,21 @@
+.result {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.answer {
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.sources {
+    padding-left: 20px;
+}
+
+.sources li {
+    color: #999;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
