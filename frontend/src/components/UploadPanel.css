@@ -1,0 +1,46 @@
+.upload-section {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.upload-textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #0f0f0f;
+    color: #e5e5e5;
+    font-family: inherit;
+    resize: vertical;
+    margin-bottom: 12px;
+}
+
+.upload-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.upload-button,
+.upload-file-label {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #2a2a2a;
+    color: #e5e5e5;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.upload-button:hover,
+.upload-file-label:hover {
+    background: #3a3a3a;
+}
+
+.upload-status {
+    margin-top: 12px;
+    color: #4ade80;
+    font-size: 0.85rem;
+}
