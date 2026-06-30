@@ -23,3 +23,4 @@ Transformers are neural network architectures that power modern LLMs.
 The attention mechanism allows transformers to focus on relevant parts of input.
 GPT, Claude, and Llama are all decoder-only transformer models.
 Temperature controls the randomness of LLM outputs during generation.
+
